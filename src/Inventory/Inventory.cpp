@@ -5,6 +5,9 @@ Inventory::Inventory(int size)
 {
     maxCapacity = size;
     items = new Item_A*[size];
+    for (size_t i = 0; i < size; i++){
+        items[i] = nullptr;
+    }
 }
 
 Inventory::~Inventory()
@@ -13,18 +16,21 @@ Inventory::~Inventory()
     items = nullptr;
 }
 
-void Inventory::addItem(unsigned int index, Item_A *item)
+int Inventory::addItem(unsigned int index, Item_A &item)
 {
-    if(items[index] == nullptr)
-        items[index] = item;
+    if(items[index] == nullptr){
+        for(int i = 0; i < maxCapacity; i++)
+            if(&item == items[i])
+                return 1;
+        items[index] = &item;
+        return 0;
+    }
     else
-        throw "addItem: Item already exists in this space.";
+        return 1;
 }
 
-void Inventory::removeItem(unsigned int index)
+int Inventory::removeItem(unsigned int index)
 {
-    if(items[index] != nullptr)
-        delete items[index];
     items[index] = nullptr;
 }
 

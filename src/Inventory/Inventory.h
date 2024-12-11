@@ -8,8 +8,8 @@ class Inventory
 public:
     Inventory(int size);
     ~Inventory();
-    void addItem(unsigned int index, Item_A* item);
-    void removeItem(unsigned int index);
+    int addItem(unsigned int index, Item_A& item);
+    int removeItem(unsigned int index);
     void displayItems() const;
     void swapItems(int i, int j);
 };
