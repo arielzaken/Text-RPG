@@ -1,25 +1,13 @@
-#include <iostream>
 #include "Inventory/Inventory.h"
 #include "Item/Sword/Sword.h"
-
-using namespace std;
+#include "World/World.h"
 
 int main() {
     Inventory inv(5);
     Sword swordA("A", 5.7);
     Sword swordB("B", 87.9);
-    inv.displayItems();
-    if(inv.addItem(3, swordA))
-        cout << "error" << endl;
-    inv.displayItems();
-    if(inv.addItem(3, swordA))
-        cout << "error" << endl;
-    inv.displayItems();
-    if(inv.addItem(3, swordB))
-        cout << "error" << endl;
-    inv.displayItems();
-    if(inv.addItem(4, swordB))
-        cout << "error" << endl;
-    inv.displayItems();
+    World world(20, 20);
+    world.print();
+    system("pause");
     return 0;
 }

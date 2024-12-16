@@ -1,21 +1,18 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "cmake run",
+            "name": "CMake Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/out/build/gcc/Text_RPG.exe",
+            "program": "${workspaceFolder}/out/build/gcc/Text_RPG.exe",  // Path to the built executable
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+            "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",  // Path to gdb
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -28,7 +25,24 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "CMake: clean rebuild",
+            "preLaunchTask": "CMake: build",  // Build before debugging
+            "postDebugTask": "CMake: clean"  // Optional: clean after debugging (if needed)
+        },
+        {
+            "name": "CMake Run",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/build/gcc/Text_RPG.exe",  // Path to the built executable
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,  // Run in an external console
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",  // Path to gdb
+            "setupCommands": [],
+            "preLaunchTask": "CMake: build",  // Build before running
+            "postDebugTask": "CMake: clean"  // Optional: clean after running (if needed)
         }
     ]
 }
