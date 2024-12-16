@@ -1,6 +1,7 @@
 #pragma once
-#include <stdint.h>
-#include "Inventory/Inventory.h"
+
+#include "../Inventory/Inventory.h"
+
 class Character_A
 {
     int hp;

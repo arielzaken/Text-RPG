@@ -1,4 +1,4 @@
-#include "Sword.h"
+#include "Item/Sword/Sword.h"
 #include <iostream>
 
 Sword::Sword(string _name, int _damage, float _mass) : Item_A(_name, _mass), damage(_damage) {}

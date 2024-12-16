@@ -1,4 +1,4 @@
-#include "Inventory.h"
+#include "Inventory/Inventory.h"
 #include <iostream>
 
 Inventory::Inventory(int size)
@@ -32,6 +32,7 @@ int Inventory::addItem(unsigned int index, Item_A &item)
 int Inventory::removeItem(unsigned int index)
 {
     items[index] = nullptr;
+    return 1;
 }
 
 void Inventory::displayItems() const

@@ -1,6 +1,8 @@
 #pragma once
-#include "Item/Item_A.h"
+
+#include "../Item/Item_A.h"
 #include <array>
+
 class Inventory
 {
     Item_A** items;
